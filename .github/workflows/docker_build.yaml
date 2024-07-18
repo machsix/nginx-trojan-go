@@ -6,7 +6,7 @@ on:
       - 'Dockerfile'
       - '.github/workflows/**'
 jobs:
-    build:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     permissions:
@@ -51,7 +51,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |

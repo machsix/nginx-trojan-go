@@ -6,7 +6,7 @@ RUN apk add --update git &&\
     wget https://github.com/v2ray/domain-list-community/raw/release/dlc.dat -O release/geosite.dat &&\
     wget https://github.com/v2ray/geoip/raw/release/geoip.dat -O release/geoip.dat
 
-FROM linuxserver/nginx:1.26.1
+FROM linuxserver/nginx:latest
 WORKDIR /
 COPY root/ /
 COPY --from=builder /trojan-go/release /usr/sbin/
